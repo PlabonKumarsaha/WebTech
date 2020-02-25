@@ -51,6 +51,8 @@
 	}
 	else{
 	$total = $moneyCri+$moneySwi+$moneyBas;
+	$_SESSION['totalmoneyMale'] = $total;
+	 header("Location: total.php");
    }
    }
 

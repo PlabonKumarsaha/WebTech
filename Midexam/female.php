@@ -39,14 +39,16 @@
       $moneyBas = 150;
 	 $co =$co +1;
     }
-	
-	if($co == 3)
+	if($co == "3")
 	{
-	$err = "Can not select more then two sports"	
+	$err = "Can not select more then two sports";	
 	}
 	else{
 	$total = $moneyCri+$moneyHand+$moneyBas;
+	 $_SESSION['totalmoneyFemale'] = $total;
+	 header("Location: total.php");
    }
+   
    }
   
   
@@ -75,7 +77,7 @@
   
   <input type="checkbox" id="Basketball " name="Basketball " value="">
   <label for="Basketball "> Basketball(150 BDT) </label><br><br>
-  <input type="submit" value="continue">
+  <input type="submit" value="continueAgain">
 </form>
   
   </body>

@@ -49,7 +49,7 @@
 
 
 
-<html lang="en" dir="ltr">
+<html>
   <head>
     
     <title>Personal Info</title>
