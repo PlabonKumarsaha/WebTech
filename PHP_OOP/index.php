@@ -3,9 +3,10 @@
 class User{
 
 public $age = 0;
-public function __constructor($name,$age){
-
-echo $name;
+public $name;
+public function __construct($name,$age){
+$this->name = $name;
+echo "name :".$name. "<br>";
 $this->age = $age;
 }
 
