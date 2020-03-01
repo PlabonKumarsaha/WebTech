@@ -7,7 +7,7 @@ $user1 = new Member("pks","pks@gmail.com",'Nov 15');
 
 echo $user1 ->getType();
 
-echo "<br>";
+echo "<br> <br>";
 
 $user2 = new Admin("abc","abc@gmail.com",2);
 
