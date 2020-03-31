@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Small Game</title>
+	
+	<script>
+	
+		function updateScore(){
+		
+			var score = document.getElementById('score').innerText;
+			score++;
+			document.getElementById('score').innerText = score;
+			
+			if(score == 10){
+				document.getElementById('winMessage').style.display = 'block';
+				document.getElementById('btn_click').style.display = 'none';
+				document.getElementById('btn_reset').style.display = 'block';
+			}
+		
+		}
+		
+		function resetGame(){
+			document.getElementById('winMessage').style.display = 'none';
+			document.getElementById('btn_click').style.display = 'block';
+			document.getElementById('btn_reset').style.display = 'none';
+			
+			document.getElementById('score').innerText = 0;			
+		}
+	
+	</script>
+	
+  </head>
+  <body>
+    <h1 id="winMessage" style="display:none">You Won!</h1>
+    <h1 id="score">0</h1>
+    <button type="button" name="button" id="btn_click" onclick="updateScore()">Click</button>
+    <button type="button" name="button" id="btn_reset" style="display:none" onclick="resetGame()">Reset</button>
+  </body>
+</html>
