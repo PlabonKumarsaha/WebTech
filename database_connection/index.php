@@ -17,10 +17,10 @@ if(isset($_REQUEST['action'])){
 
 if($_REQUEST["action"] == "true"){
 
-	echo "<font color='green'>data inserted!</font>";
+	echo "<font color='green'>data inserted!</font> <br>";
 }else{
 
-	echo "<font color='red'>data not inserted!</font>";
+	echo "<font color='red'>data not inserted!</font><br>";
 }
 
 }  ?>
@@ -33,6 +33,52 @@ if($_REQUEST["action"] == "true"){
 
 </div>
 </form>
+
+<div class ="division2" align="center">
+
+	<?php if(isset($_REQUEST["deleted"])){
+
+    echo "Data has been deleted!";
+
+	} ?>
+
+<table border="1px">
+<tr>
+<td><b>First Name </b></td>
+<td><b>Last Name </b></td>
+<td><b>Email Adress</b></td>
+<td><b>Action</b></td>
+
+</tr>
+
+<?php require_once("dbConnect.php"); 
+
+$showDataQuery="Select * from my_users";
+$runDataQuery =mysqli_query($connect,$showDataQuery);
+
+if($runDataQuery == true)
+{
+   
+   while($myData = mysqli_fetch_array($runDataQuery)){ ?>
+
+   <tr>
+
+<td><?php echo $myData["fname"]; ?> </td>
+<td><?php echo $myData["lname"]; ?> </td>
+<td><?php echo $myData["email_addr"]; ?> </td>
+<td><a href="#">Edit</a> | <a href="deleteData.php?id=<?php echo $myData["id"]; ?>"> Delete</a> </td>
+
+   </tr>
+
+
+
+
+  <?php }} 
+
+ ?>
+</table>
+
+	</div>
 </body>
 </html>
 
@@ -42,6 +88,13 @@ if($_REQUEST["action"] == "true"){
 div {
   padding: 135px;
   font-size: 25px;
+}
+
+.division2{
+
+ padding: 0px;
+  font-size: 25px;
+
 }
 
 </style>
