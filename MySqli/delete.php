@@ -36,11 +36,11 @@ $run_query =mysqli_query($connect,$query);
 
 if($run_query ==true){
 
-	$updatequery = "Delete from my_users  where id =7";
+	$deletequery = "Delete from my_users  where id =7";
 
-	$runUpdateQuery = mysqli_query($connect,$updatequery);
+	$runDeleteQuery = mysqli_query($connect,$deletequery);
 
-	if($runUpdateQuery == true){
+	if($runDeleteQuery == true){
 
 		echo "row delted";
 	}else{
