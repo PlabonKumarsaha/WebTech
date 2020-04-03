@@ -66,7 +66,7 @@ if($runDataQuery == true)
 <td><?php echo $myData["fname"]; ?> </td>
 <td><?php echo $myData["lname"]; ?> </td>
 <td><?php echo $myData["email_addr"]; ?> </td>
-<td><a href="#">Edit</a> | <a href="deleteData.php?id=<?php echo $myData["id"]; ?>"> Delete</a> </td>
+<td><a href="edit.php">Edit</a> | <a href="deleteData.php?id=<?php echo $myData["id"]; ?>"> Delete</a> </td>
 
    </tr>
 
