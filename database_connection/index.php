@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<form action="Data.php" method ="POST">
+<form action="Data.php" method ="POST" enctype="multipart/form-data">
 
 
 
@@ -29,7 +29,9 @@ if($_REQUEST["action"] == "true"){
 <input type="text" name="lname" placeholder="Last name"><br><br>
 <input type="email" name="email_addr" placeholder="Mailing adress"><br><br>
 <input type="password" name="usr_pwd" placeholder="Password"><br><br>
+<input type="file" name="avatar"><br><br>
 <input type="submit" name="submitBtn" value="Save Data"><br><br>
+
 
 </div>
 </form>
@@ -47,18 +49,21 @@ if($_REQUEST["action"] == "true"){
 <td><b>First Name </b></td>
 <td><b>Last Name </b></td>
 <td><b>Email Adress</b></td>
+<td><b>Pro pic</b></td>
 <td><b>Action</b></td>
+
+
 
 </tr>
 
-<?php require_once("dbConnect.php"); 
+<?php require_once("dbConnect.php");
 
 $showDataQuery="Select * from my_users";
 $runDataQuery =mysqli_query($connect,$showDataQuery);
 
 if($runDataQuery == true)
 {
-   
+
    while($myData = mysqli_fetch_array($runDataQuery)){ ?>
 
    <tr>
@@ -66,14 +71,15 @@ if($runDataQuery == true)
 <td><?php echo $myData["fname"]; ?> </td>
 <td><?php echo $myData["lname"]; ?> </td>
 <td><?php echo $myData["email_addr"]; ?> </td>
-<td><a href="edit.php">Edit</a> | <a href="deleteData.php?id=<?php echo $myData["id"]; ?>"> Delete</a> </td>
+<td><center> <img width="60px" src="avatar/image.png" alt="" /> <?php $myData["avatar"];?> </center> </td>
+<td><a href="edit.php?id=<?php echo $myData["edit_id"]; ?>">Edit</a> | <a onclick="return confirm('are you sure?');" href="deleteData.php?id=<?php echo $myData["id"]; ?>"> Delete</a> </td>
 
    </tr>
 
 
 
 
-  <?php }} 
+  <?php }}
 
  ?>
 </table>
@@ -84,7 +90,7 @@ if($runDataQuery == true)
 
 
 <style type="text/css">
-	
+
 div {
   padding: 135px;
   font-size: 25px;

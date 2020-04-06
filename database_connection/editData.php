@@ -2,7 +2,7 @@
 
 require_once("dbConnect.php");
 
-if(isset($_REQUEST["edit_id"])){
+if(isset($_REQUEST["editBtn"])){
 	
 	$editID = $_REQUEST["edit_id"];
 
