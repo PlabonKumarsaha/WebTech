@@ -71,7 +71,7 @@ if($runDataQuery == true)
 <td><?php echo $myData["fname"]; ?> </td>
 <td><?php echo $myData["lname"]; ?> </td>
 <td><?php echo $myData["email_addr"]; ?> </td>
-<td><center> <img width="60px" src="avatar/image.png" alt="" /> <?php $myData["avatar"];?> </center> </td>
+<td><center> <img width="60px" src="avatar/<?php echo $myData['avatar'];?>" alt="" /> </center> </td>
 <td><a href="edit.php?id=<?php echo $myData["edit_id"]; ?>">Edit</a> | <a onclick="return confirm('are you sure?');" href="deleteData.php?id=<?php echo $myData["id"]; ?>"> Delete</a> </td>
 
    </tr>

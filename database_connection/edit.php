@@ -17,7 +17,7 @@ if(isset($_REQUEST["edit_id"])){
 	$editID = $_REQUEST["edit_id"];
 
 
-$selectInfo = "select * FROM my_users WHERE  id=5 ";
+$selectInfo = "select * FROM my_users WHERE  id= '$editID' ";
 $runQuery = mysqli_query($connect,$selectInfo);
 if($selectInfo == true){
 
