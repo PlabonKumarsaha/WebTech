@@ -1,6 +1,7 @@
 <?php
   session_start();
 
+
   if(!(isset($_SESSION['genFemale']))) {
     header("Location: index.php");
   }
